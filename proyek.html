@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Naufal Ryvan N. Z. | Proyek</title>
+  <link rel="icon" href="img/NAUFAL.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <h1>Naufal Ryvan N. Z.</h1>
+      <nav>
+        <a href="index.html">Beranda</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="kontak.html">Kontak</a>
+        <a href="kalkulator.html">Kalkulator</a>
+      </nav>
+      <!-- Tombol Mode Gelap (Modul P1-W07) -->
+      <button type="button" id="tombol-tema" class="tombol-tema">Mode Gelap</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Proyek Saya</h2>
+      <p>Kumpulan hasil belajar saya di Kelas Industri UBIG.</p>
+
+      <!-- Tombol Filter Kategori (Modul P1-W07) -->
+      <div class="filter">
+        <button type="button" class="tombol-filter" id="filter-semua">Semua</button>
+        <button type="button" class="tombol-filter" id="filter-html">HTML</button>
+        <button type="button" class="tombol-filter" id="filter-css">CSS</button>
+        <button type="button" class="tombol-filter" id="filter-javascript">JavaScript</button>
+      </div>
+      <p id="jumlah-proyek"></p>
+
+      <!-- Wadah Kartu Proyek Dinamis -->
+      <div class="daftar-kartu" id="daftar-proyek"></div>
+    </section>
+
+    <section class="kartu">
+      <h2>Repositori GitHub Saya</h2>
+      <p id="status-repo-w08"></p>
+      <div class="daftar-kartu" id="daftar-repo-w08"></div>
+    </section>
+
+    <section class="kartu">
+      <h2>Pertanyaan yang Sering Diajukan</h2>
+      <details>
+        <summary>Bahasa apa yang dipakai untuk membuat proyek ini?</summary>
+        <p>Proyek di halaman ini dibuat dengan HTML, CSS, dan JavaScript. Pilih tombol kategori di atas untuk melihat proyek per bahasa[cite: 138].</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Naufal Ryvan N. Z. Hak cipta dilindungi.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,429 @@
+/* ==========================================
+   1. Variabel CSS & Pengaturan Dasar (:root)
+   ========================================== */
+:root {
+  --warna-utama: #1D3557;
+  --warna-judul: #1D3557;
+  --warna-aksen: #E63946;
+  --warna-tautan: #E63946;
+  --warna-latar: #F1FAEE;
+  --warna-teks: #333333;
+  --warna-kartu: #FFFFFF;
+  --warna-garis: #DDDDDD;
+}
+
+/* ==========================================
+   2. Layout Umum & Reset
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--warna-latar);
+  color: var(--warna-teks);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================
+   3. Header & Navigasi
+   ========================================== */
+header {
+  background-color: var(--warna-utama);
+  color: #FFFFFF;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: 600;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================
+   4. Bagian Hero & Kartu
+   ========================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--warna-kartu);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--warna-garis);
+  margin-bottom: 2rem;
+}
+
+.hero img {
+  width: clamp(120px, 30vw, 200px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 4px solid var(--warna-aksen);
+}
+
+.hero h2, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  color: var(--warna-judul);
+  margin-bottom: 0.5rem;
+}
+
+.daftar-kartu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.kartu {
+  background-color: var(--warna-kartu);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--warna-garis);
+}
+
+.kartu > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.baris-isian {
+  margin-bottom: 1rem;
+}
+
+.baris-isian label {
+  display: block;
+  font-weight: 600;
+}
+
+.aksi {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.aksi .tombol,
+.aksi .tombol-reset {
+  margin-top: 0;
+}
+
+.tombol-reset {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--warna-garis);
+  border-radius: 4px;
+  background-color: var(--warna-kartu);
+  color: var(--warna-judul);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.pesan {
+  margin-top: 1rem;
+  color: var(--warna-aksen);
+  font-weight: 600;
+}
+
+.hasil {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hasil-baris {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--warna-garis);
+  border-radius: 4px;
+  background-color: var(--warna-latar);
+}
+
+.hasil-baris dt {
+  font-weight: 600;
+}
+
+.hasil-baris dd {
+  margin: 0;
+  text-align: right;
+}
+
+.teks-kosong {
+  opacity: 0.7;
+}
+
+.teks-lulus {
+  color: #218838;
+  font-weight: 600;
+}
+
+.teks-remedial {
+  color: var(--warna-aksen);
+  font-weight: 600;
+}
+
+.kartu ul {
+  padding-left: 1.2rem;
+}
+
+#daftar-proyek .gambar-proyek {
+  aspect-ratio: 16 / 9;
+  margin: 0.75rem 0;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: var(--warna-latar);
+}
+
+#daftar-proyek .gambar-proyek--logika {
+  aspect-ratio: 814 / 591;
+}
+
+#daftar-proyek .gambar-proyek img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#daftar-proyek .kartu:first-child .gambar-proyek img {
+  transform: scale(1.7);
+}
+
+/* ==========================================
+   5. Tombol & Elemen Interaktif
+   ========================================== */
+.tombol, button[type="submit"] {
+  display: inline-block;
+  background-color: var(--warna-aksen);
+  color: #FFFFFF;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.tombol:hover, button[type="submit"]:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================
+   6. Form & Kotak Isian
+   ========================================== */
+form {
+  margin-top: 1rem;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid var(--warna-garis);
+  border-radius: 4px;
+  font-family: inherit;
+  background-color: var(--warna-kartu);
+  color: var(--warna-teks);
+}
+
+.keterangan {
+  font-size: 0.875rem;
+  color: var(--warna-teks);
+  opacity: 0.8;
+}
+
+/* ==========================================
+   7. Tabel & Footer
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: var(--warna-kartu);
+}
+
+th, td {
+  border: 1px solid var(--warna-garis);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--warna-utama);
+  color: #FFFFFF;
+}
+
+footer {
+  background-color: var(--warna-utama);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+/* ==========================================
+   8. Tombol Tema, Filter, & Label Kategori (P1-W07)
+   ========================================== */
+.tombol-tema {
+  padding: 0.5rem 0.9rem;
+  border: 2px solid #FFFFFF;
+  background-color: transparent;
+  color: #FFFFFF;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tombol-filter {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--warna-garis);
+  background-color: var(--warna-kartu);
+  color: var(--warna-judul);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Tambahan untuk Tugas: Tombol Aktif Filter */
+.tombol-filter.aktif {
+  background-color: var(--warna-aksen);
+  color: #FFFFFF;
+  border-color: var(--warna-aksen);
+}
+
+/* Aksen visual tambahan */
+body {
+  background-image:
+    radial-gradient(circle at 8% 10%, rgba(230, 57, 70, 0.08), transparent 28rem),
+    radial-gradient(circle at 92% 35%, rgba(69, 123, 157, 0.1), transparent 32rem);
+  background-attachment: fixed;
+}
+
+header {
+  box-shadow: 0 8px 24px rgba(11, 21, 38, 0.14);
+}
+
+nav a {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #FFD166;
+  transform: translateY(-2px);
+}
+
+.hero,
+.kartu {
+  box-shadow: 0 10px 28px rgba(29, 53, 87, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hero img {
+  box-shadow: 0 8px 22px rgba(29, 53, 87, 0.18);
+  transition: transform 0.25s ease;
+}
+
+.tombol,
+.tombol-tema,
+.tombol-filter,
+.tombol-reset,
+button[type="submit"] {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+@media (hover: hover) {
+  .hero:hover,
+  .kartu:hover {
+    transform: translateY(-4px);
+    border-color: rgba(230, 57, 70, 0.35);
+    box-shadow: 0 16px 34px rgba(29, 53, 87, 0.13);
+  }
+
+  .hero:hover img {
+    transform: scale(1.04);
+  }
+
+  .tombol:hover,
+  .tombol-tema:hover,
+  .tombol-filter:hover,
+  .tombol-reset:hover,
+  button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(29, 53, 87, 0.16);
+  }
+}
+
+.label {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  margin-bottom: 0.5rem;
+  border-radius: 999px;
+  background-color: var(--warna-latar);
+  color: var(--warna-judul);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   9. Tema Gelap: Variabel Tertimpa (P1-W07)
+   ========================================== */
+body.gelap {
+  --warna-utama: #0B1526;
+  --warna-judul: #A8DADC;
+  --warna-tautan: #FF8A8A;
+  --warna-latar: #121A24;
+  --warna-teks: #E3E8EE;
+  --warna-kartu: #1C2836;
+  --warna-garis: #34465A;
+}
+
+.tombol-filter.aktif {
+  background-color: var(--warna-aksen);
+  color: #FFFFFF;
+  border-color: var(--warna-aksen);
+}
