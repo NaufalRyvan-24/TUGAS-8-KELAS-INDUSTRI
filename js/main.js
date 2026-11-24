@@ -203,33 +203,6 @@ async function muatRepositoriGitHub() {
 
 muatRepositoriGitHub();
 
-const daftarSkillW08 = document.querySelector("#daftar-skill-w08");
-const jumlahSkillW08 = document.querySelector("#jumlah-skill-w08");
-
-async function muatKeahlianW08() {
-  try {
-    const response = await fetch("data/keahlian.json");
-    if (!response.ok) {
-      throw new Error(`Status ${response.status}`);
-    }
-
-    const skillsW08 = await response.json();
-    skillsW08.forEach((skill) => {
-      const item = document.createElement("li");
-      item.textContent = `${skill.nama} (${skill.level})`;
-      daftarSkillW08.appendChild(item);
-    });
-    jumlahSkillW08.textContent = `Ada ${skillsW08.length} keahlian yang sedang saya kembangkan.`;
-  } catch (error) {
-    jumlahSkillW08.textContent = "Daftar keahlian gagal dimuat.";
-    console.error(error);
-  }
-}
-
-if (daftarSkillW08) {
-  muatKeahlianW08();
-}
-
 const usernameW08 = "NaufalRyvan-24";
 const statusRepoW08 = document.querySelector("#status-repo-w08");
 const daftarRepoW08 = document.querySelector("#daftar-repo-w08");
